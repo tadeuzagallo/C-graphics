@@ -166,8 +166,10 @@ void gflush(void) {
 #pragma mark - Private functions
 
 static void init(void) {
-  char *name = "graphics";
+  char *name = malloc(sizeof(char) * 9);
   int a = 1;
+
+  strcpy(name, "graphics");
 
   glutInit(&a, &name);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
